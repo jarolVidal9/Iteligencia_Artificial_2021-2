@@ -1,0 +1,17 @@
+.
+felino
+domestico
+ladra
+mamifero
+bovino
+reptil
+caparazon
+carnivoro
+vuela
+peludo
+cuadrupedo
+salvaje
+herbivoro
+cuello largo
+dientes grandes
+agresivo

@@ -1,0 +1,12 @@
+.
+gato
+tigre
+perro
+vaca
+tortuga
+lagarto
+pajaro
+oso
+elefante
+jirafa
+hipopotamo

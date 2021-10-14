@@ -98,13 +98,13 @@ def menu():
 		print("Ingrese '1' para educar a el sistema experto")
 		if manejoArchivos.tamreglas()>0:
 			print("Ingrese '2' para jugar a el sistema experto")
-		print("Ingrese '0' para salir")
+		print("Ingrese '3' para salir")
 		opcion=input()
 		if opcion=="1":
 			agregarElemento()
 		elif opcion=="2":
 			jugar()
-		elif opcion=="0":
+		elif opcion=="3":
 			print("Gracias por utilizar nuestro programa")
 			break
 menu()

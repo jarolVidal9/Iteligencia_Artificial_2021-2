@@ -104,7 +104,7 @@ def menu():
 			agregarElemento()
 		elif opcion=="2":
 			jugar()
-		elif opcion=="3":
+		elif opcion=="0":
 			print("Gracias por utilizar nuestro programa")
 			break
 menu()

@@ -1,5 +1,5 @@
 import manejoArchivos
-
+#agrega los elementos a los archivos para entrenar el sistemas
 def agregarElemento():
 	nuevoElememto=[]
 	print("Si desea agregar nuevos atributos a una entidad solo ingrese de nuevo el nombre de la entidad acontinuacion")
@@ -14,6 +14,7 @@ def agregarElemento():
 		else:
 			nuevoElememto.append(atributo)
 	manejoArchivos.escribirArchivo(nuevoElememto)
+#Eliminar la rama por contestar no
 def eliminar(reglas,x,atributos):
 	Coincidencias=[]
 	for y in reglas[:]:
@@ -24,7 +25,7 @@ def eliminar(reglas,x,atributos):
 		for z in reglas[:]:
 			if (i[0]==z[0]):
 				reglas.remove(z)
-
+#elimina las demas ramas al contestar si
 def eliminar2(reglas,x,atributos):
 	Coincidencias=[]
 	for y in reglas[:]:
@@ -39,7 +40,7 @@ def eliminar2(reglas,x,atributos):
 		reglas.remove(x)
 	for z in reglas2:
 		reglas.append(z)
-
+#valido que solo quede una entidad
 def validacion(reglas):
 	i=0
 	posicion=reglas[0][0]
@@ -50,6 +51,7 @@ def validacion(reglas):
 		return 1
 	else:
 		return 0
+#se eliminan los atributos que ya no se deben preguntar 
 def validacionAtributos(atributos,reglas):
 	for i in range(len(atributos)):
 		contador=0
@@ -60,7 +62,7 @@ def validacionAtributos(atributos,reglas):
 					break
 			if contador==0:
 				atributos[i]="0"
-		
+#entidad principal donde se realizan las preguntas
 def jugar():
 	atributos=manejoArchivos.leerAtributos()
 	reglas=manejoArchivos.leerReglas()
@@ -89,6 +91,7 @@ def jugar():
 				print("No se cuenta con el suficiente conocimiento para adivinar.")
 				break
 		validacionAtributos(atributos,reglas)
+#menu donde se elige si agregar mas entidades o jugar
 def menu():
 	print("Este es un sistema experto que se dedica al aprendizaje y 'adivinacion'")
 	print("\n")

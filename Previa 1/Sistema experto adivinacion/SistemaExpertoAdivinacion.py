@@ -69,28 +69,32 @@ def jugar():
 	entidad=manejoArchivos.leerEntidades()
 	print("Por favor conteste 'SI' o 'NO' unicamente")
 	print("Si desea detener las preguntas escriba 'parar'")
-	for j in reglas[:]:
-		if atributos[j[1]]=="0":
-			continue
-		else:
-			respuesta=input("Estas pensando en "+atributos[j[1]]+" ?")
-			if respuesta.strip().lower()=="si":
-				aux=j
-				atributos[j[1]]="0"
-				eliminar2(reglas,aux,atributos)
-			elif respuesta.strip().lower()=="no":
-				aux2=j
-				atributos[j[1]]="0"
-				eliminar(reglas,aux2,atributos)
-			elif respuesta.strip().lower()=="parar":
-				break
-			if validacion(reglas)==1:
-					print("En lo que usted esta pensando es:"+entidad[reglas[0][0]])
+	try:
+		for j in reglas[:]:
+			if atributos[j[1]]=="0":
+				continue
+			else:
+				respuesta=input("Estas pensando en "+atributos[j[1]]+" ?")
+				if respuesta.strip().lower()=="si":
+					aux=j
+					atributos[j[1]]="0"
+					eliminar2(reglas,aux,atributos)
+				elif respuesta.strip().lower()=="no":
+					aux2=j
+					atributos[j[1]]="0"
+					eliminar(reglas,aux2,atributos)
+				elif respuesta.strip().lower()=="parar":
 					break
-			if len(reglas)==0:
-				print("No se cuenta con el suficiente conocimiento para adivinar.")
-				break
-		validacionAtributos(atributos,reglas)
+				if validacion(reglas)==1:
+						print("En lo que usted esta pensando es:"+entidad[reglas[0][0]])
+						break
+				if len(reglas)==0:
+					print("No se cuenta con el suficiente conocimiento para adivinar.")
+					break
+			validacionAtributos(atributos,reglas)
+	except Exception as e:
+		print("No hay suficiente conocimiento para contestarle")
+	
 #menu donde se elige si agregar mas entidades o jugar
 def menu():
 	print("Este es un sistema experto que se dedica al aprendizaje y 'adivinacion'")

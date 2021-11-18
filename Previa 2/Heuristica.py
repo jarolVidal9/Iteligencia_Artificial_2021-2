@@ -48,18 +48,16 @@ def busquedaCamino(nodoInicial,agenda,suma):
 		return 0
 	else:
 		if nodoInicial.getHijos()!=None:
-			i=0
 			for x in nodoInicial.getHijos():
 				if x.getVisita():
 					x.setVisita(0)
 					print(x.getId())
 					busquedaCamino(x,agenda,suma)
 					agenda.append(x.getId)
-					if x.getPesos!=None:
-						agenda.append(suma+ x.getPesos[i])
-					i=i+1
+			
 
 nodoInicial=nodosprueba()
 agenda=[[]]
 busquedaCamino(nodoInicial,agenda,0)
+print(agenda)
 #print(Estadoinicial.getPesos())

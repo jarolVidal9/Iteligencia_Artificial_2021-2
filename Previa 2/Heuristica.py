@@ -14,7 +14,7 @@ class nodo:
 	def setHijos(self,vector):
 		self.hijos=vector
 	def setVisita(self,dato):
-		self.visita=datos
+		self.visita=dato
 	def getId(self):
 		return self.id_nodo
 	'''def getNombre(self):
@@ -41,15 +41,25 @@ def nodosprueba():
 	b=nodo("b",[1,2],[f,g])
 	a=nodo("a",[1,9,5,6],[b,c,d,e])
 	return a
-def busquedaCamino(nodoInicial):
+def busquedaCamino(nodoInicial,agenda,suma):
 	if nodoInicial==None:
+		agenda=[]
+		suma=0
 		return 0
 	else:
 		if nodoInicial.getHijos()!=None:
+			i=0
 			for x in nodoInicial.getHijos():
 				if x.getVisita():
+					x.setVisita(0)
 					print(x.getId())
+					busquedaCamino(x,agenda,suma)
+					agenda.append(x.getId)
+					if x.getPesos!=None:
+						agenda.append(suma+ x.getPesos[i])
+					i=i+1
 
 nodoInicial=nodosprueba()
-busquedaCamino(nodoInicial)
+agenda=[[]]
+busquedaCamino(nodoInicial,agenda,0)
 #print(Estadoinicial.getPesos())

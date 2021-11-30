@@ -10,7 +10,7 @@ def generarGrafo(aristas):
 aristas = [['A', 'B'], ['A', 'C'], ['B', 'D'], ['B', 'E'], ['C', 'F'], ['C', 'G'], ['D', 'H'], ['D', 'I'], ['E', 'J'], ['E', 'K'], ['F', 'L'], ['F', 'M']]
 ListaAdyacencia = generarGrafo(aristas)
 
-def busquedaAmplitud(ListaAdyacencia, nodo):
+def busquedaAmplitud(ListaAdyacencia,nodo):
     Visitado = set()
     cola = []
     Visitado.add(nodo)
@@ -25,6 +25,6 @@ def busquedaAmplitud(ListaAdyacencia, nodo):
                 Visitado.add(neighbor)
                 cola.append(neighbor)
     return result
-print(busquedaAmplitud(ListaAdyacencia,'H'))
+print(busquedaAmplitud(ListaAdyacencia,'A'))
 
 

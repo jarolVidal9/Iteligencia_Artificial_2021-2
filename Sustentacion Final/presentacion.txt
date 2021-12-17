@@ -1,0 +1,4 @@
+Presentacion del estudiante
+Introduccion acerca del sonido
+Explicacion librerias utilizadas
+Explicación códigos de procesamiento de audio
